@@ -241,7 +241,8 @@ var allCountries = [
     [
       'Colombia',
       'co',
-      '57'
+      '57',
+      '+.. ... ... ....',
     ],
     [
       'Comoros (‫جزر القمر‬‎)',
