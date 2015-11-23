@@ -457,10 +457,6 @@ var ReactTelephoneInput = React.createClass({
         };
     },
     render() {
-        var arrowClasses = classNames({
-            'arrow': true,
-            'up': this.state.showDropDown
-        });
         var inputClasses = classNames({
             'form-control': true,
             'invalid-number': !this.props.isValid(this.state.formattedNumber.replace(/\D/g, ''))
@@ -487,9 +483,8 @@ var ReactTelephoneInput = React.createClass({
                     autoComplete='tel'
                     placeholder='+1 (702) 123-4567'/>
                 <div ref='flagDropDownButton' className={flagViewClasses} onKeyDown={this.handleKeydown} >
-                    <div ref='selectedFlag' onClick={this.handleFlagDropdownClick} className='selected-flag' title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}>
+                    <div ref='selectedFlag' className='selected-flag' title={`${this.state.selectedCountry.name}: + ${this.state.selectedCountry.dialCode}`}>
                         <div className={inputFlagClasses} style={this.getFlagStyle()}>
-                            <div className={arrowClasses}></div>
                         </div>
                     </div>
                     {this.state.showDropDown ? this.getCountryDropDownList() : ''}

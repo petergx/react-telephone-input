@@ -757,22 +757,10 @@
   background: #fff;
   border-radius: 3px 0 0 0;
 }
-.react-tel-input .flag-dropdown:hover {
-  cursor: pointer;
-}
-.react-tel-input .flag-dropdown:hover .selected-flag {
-  background-color: #fff;
-}
-.react-tel-input input[disabled] + .flag-dropdown:hover {
-  cursor: default;
-}
-.react-tel-input input[disabled] + .flag-dropdown:hover .selected-flag {
-  background-color: transparent;
-}
 .react-tel-input .selected-flag {
   z-index: 13;
   position: relative;
-  width: 38px;
+  width: 34px;
   height: 26px;
   padding: 0 0 0 8px;
   border-radius: 3px 0 0 3px;
