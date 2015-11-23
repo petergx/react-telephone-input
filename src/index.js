@@ -18,7 +18,6 @@ var trim = require('lodash/string/trim');
 var startsWith = require('lodash/string/startsWith');
 
 var React = require('react');
-var onClickOutside = require('react-onclickoutside');
 var classNames = require('classnames');
 var countryData = require('./country_data');
 var allCountries = countryData.allCountries;
@@ -52,7 +51,6 @@ function isNumberValid(inputNumber) {
 }
 
 var ReactTelephoneInput = React.createClass({
-    mixins: [onClickOutside],
     getInitialState() {
         var inputNumber = this.props.value || '';
         var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
@@ -398,13 +396,6 @@ var ReactTelephoneInput = React.createClass({
     handleInputKeyDown(event) {
         if(event.which === keys.ENTER) {
             this.props.onEnterKeyPress(event);
-        }
-    },
-    handleClickOutside() {
-        if(this.state.showDropDown) {
-            this.setState({
-                showDropDown: false
-            });
         }
     },
     getCountryDropDownList() {

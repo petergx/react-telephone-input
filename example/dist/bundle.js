@@ -3072,7 +3072,6 @@ var trim = require('lodash/string/trim');
 var startsWith = require('lodash/string/startsWith');
 
 var React = require('react');
-var onClickOutside = require('react-onclickoutside');
 var classNames = require('classnames');
 var countryData = require('./country_data');
 var allCountries = countryData.allCountries;
@@ -3108,7 +3107,6 @@ function isNumberValid(inputNumber) {
 var ReactTelephoneInput = React.createClass({
     displayName: 'ReactTelephoneInput',
 
-    mixins: [onClickOutside],
     getInitialState: function getInitialState() {
         var inputNumber = this.props.value || '';
         var selectedCountryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, ''));
@@ -3459,13 +3457,6 @@ var ReactTelephoneInput = React.createClass({
             this.props.onEnterKeyPress(event);
         }
     },
-    handleClickOutside: function handleClickOutside() {
-        if (this.state.showDropDown) {
-            this.setState({
-                showDropDown: false
-            });
-        }
-    },
     getCountryDropDownList: function getCountryDropDownList() {
 
         var countryDropDownList = map(this.state.preferredCountries.concat(this.props.onlyCountries), function (country, index) {
@@ -3534,4 +3525,4 @@ var ReactTelephoneInput = React.createClass({
 
 module.exports = ReactTelephoneInput;
 
-},{"../less/default.less":1,"./country_data":88,"classnames":undefined,"lodash/array/findIndex":5,"lodash/array/first":6,"lodash/array/rest":8,"lodash/collection/any":9,"lodash/collection/filter":10,"lodash/collection/findWhere":12,"lodash/collection/map":13,"lodash/collection/reduce":14,"lodash/collection/some":15,"lodash/function/debounce":17,"lodash/function/memoize":18,"lodash/string/startsWith":84,"lodash/string/trim":85,"react":undefined,"react-onclickoutside":undefined}]},{},[]);
+},{"../less/default.less":1,"./country_data":88,"classnames":undefined,"lodash/array/findIndex":5,"lodash/array/first":6,"lodash/array/rest":8,"lodash/collection/any":9,"lodash/collection/filter":10,"lodash/collection/findWhere":12,"lodash/collection/map":13,"lodash/collection/reduce":14,"lodash/collection/some":15,"lodash/function/debounce":17,"lodash/function/memoize":18,"lodash/string/startsWith":84,"lodash/string/trim":85,"react":undefined}]},{},[]);
